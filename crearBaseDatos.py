@@ -10,17 +10,7 @@ cluster= os.getenv("CLUSTER_MONGODB")
 
 cliente = MongoClient('mongodb+srv://'+usuario+':'+password+'@'+cluster+'.jowl2.mongodb.net/?retryWrites=true&w=majority&appName='+cluster)
 
-try:
-   cliente.admin.command('ping')
-   print("NOS CONECTAMOS CORRECTAMENTE")
-except Exception as e:
-   print(e)
-
-
 baseDatos = cliente["mi_primera_base_datos"]
-
 coleccion = baseDatos["mi_primera_coleccion"]
-
 documento = { "nombre": "Ángel", "apellido": "García" }
-
 inserccion = coleccion.insert_one(documento)
