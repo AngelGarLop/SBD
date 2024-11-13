@@ -12,5 +12,6 @@ cliente = MongoClient('mongodb+srv://'+usuario+':'+password+'@'+cluster+'.jowl2.
 
 baseDatos = cliente["mi_primera_base_datos"]
 coleccion = baseDatos["mi_primera_coleccion"]
-documento = { "nombre": "Ángel", "apellido": "García" }
+documento = { "nombre": "Paco", "apellido": "Pérez" }
 inserccion = coleccion.insert_one(documento)
+print(inserccion)
